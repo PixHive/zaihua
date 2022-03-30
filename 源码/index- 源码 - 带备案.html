@@ -294,5 +294,23 @@
 			<!---<script async src="https://cdn.jsdelivr.net/npm/skx@0.3.9/js/optical.js"></script>-->
 			<!-- Global site tag (gtag.js) - Google Analytics -->
 			
+			
+			
+	<script>
+        let u = navigator.userAgent.toLowerCase();
+        if (u.indexOf('weixin') != -1) {
+            window.location.href = '/wx.html';
+        } else if (u.indexOf('wechat') != -1) {
+            window.location.href = '/wx.html';
+        } else if (u.indexOf('micromessenger') != -1) {
+            window.location.href = '/wx.html';
+        } else if (u.indexOf('qq') != -1) {
+            window.location.href = '/wx.html';
+        } else {
+        }
+    </script>
+			
+			
+			
 	</body>
 </html>
