@@ -1,0 +1,109 @@
+:root {
+    --primary: #0070ff;
+    --text: #1a1a1a;
+    --surface: #ffffff;
+    --radius: 12px;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #f5f5f5;
+        --surface: #1a1a1a;
+    }
+}
+
+/* 基础重置 */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--surface);
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* 头部样式 */
+.profile-header {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), 
+                url(../img/wallpaper.webp) center/cover;
+    padding: 2rem 1rem;
+    color: white;
+}
+
+.profile-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+}
+
+/* 主内容区 */
+.main-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.service-card {
+    display: block;
+    padding: 2rem;
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+}
+
+/* 页脚 */
+.site-footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--surface);
+    margin-top: auto;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .profile-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
