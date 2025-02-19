@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0070ff">
+    
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="assets/img/wallpaper.webp" as="image">
+    <link rel="preconnect" href="https://zaihua-9d3.pages.dev">
+    
+    <!-- 核心元数据 -->
+    <title>在花(@ZAIHUA) - 主页</title>
+    <meta name="description" content="科技生活导航 | 优惠券搜索 | 外卖红包">
+    
+    <!-- PWA配置 -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- 样式表 -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- 渐进增强图标方案 -->
+    <link rel="icon" href="assets/img/icons/favicon.ico" sizes="any">
+    <link rel="icon" href="assets/img/icons/icon.svg" type="image/svg+xml">
+</head>
+
+<body>
+    <header class="profile-header">
+        <div class="profile-content">
+            <img src="assets/img/avatar.webp" 
+                 alt="在花头像"
+                 width="120"
+                 height="120"
+                 loading="eager"
+                 class="profile-avatar">
+            <div class="profile-info">
+                <h1>ZaiHua</h1>
+                <p>微信公众号：在花</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="services-section">
+            <h2 class="section-title">核心服务</h2>
+            <div class="services-grid">
+                <a href="https://m.zaihua.me" class="service-card">
+                    <svg class="card-icon" aria-hidden="true">
+                        <use href="assets/img/icons/coupon.svg#icon"/>
+                    </svg>
+                    <h3>生活优惠券</h3>
+                    <p>每日更新外卖/团购红包</p>
+                </a>
+                
+                <a href="https://so.zaihua.me" class="service-card">
+                    <svg class="card-icon" aria-hidden="true">
+                        <use href="assets/img/icons/search.svg#icon"/>
+                    </svg>
+                    <h3>优惠搜索</h3>
+                    <p>全网电商平台比价</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2 class="section-title">联系方式</h2>
+            <div class="social-links">
+                <a href="weixin://" class="social-link">
+                    <svg class="social-icon" aria-hidden="true">
+                        <use href="assets/img/icons/wechat.svg#icon"/>
+                    </svg>
+                    <span>微信: 2861099</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2017-<span id="currentYear"></span> ZaiHua.me</p>
+    </footer>
+
+    <script src="assets/js/app.js" defer></script>
+</body>
+</html>
