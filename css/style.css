@@ -1,235 +1,241 @@
-html, body {
-  height: 100%;
-  box-sizing: border-box;
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+body, html {
+    height: 100%;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  color: #7c8891;
-  font: 16px/1.375 -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
-  background: #ebedee;
-  padding: 50px;
+    margin: 0;
+    color: #7c8891;
+    font: 16px/22px -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, 
+        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    background: #ebedee;
+    padding: 50px;
 }
 
 a {
-  background-color: transparent;
-  text-decoration: none;
+    background-color: transparent;
+    text-decoration: none;
 }
 
 img {
-  border-style: none;
-  max-width: 100%;
-  height: auto;
+    border-style: none;
+    max-width: 100%;
+    height: auto;
 }
 
 h1 {
-  margin: 10px 0;
-  line-height: 30px;
-  font-size: 24px;
+    margin: 10px 0;
+    line-height: 30px;
+    font-size: 24px;
 }
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
 }
 
 .container {
-  opacity: 0;
-  transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1), transform 1.2s cubic-bezier(0.4,0,0.2,1);
-  transform: translateY(-40px);
-  position: relative;
-  width: 80vw;
-  max-width: 700px;
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 1.5px 4px rgba(0,0,0,0.03);
-  display: flex;
-  flex-direction: row;
-  min-height: 350px;
+    opacity: 0;
+    transition: opacity 1s, transform 1s;
+    transform: translateY(-40px);
+    position: relative;
+    box-sizing: border-box;
+    width: 80%;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 700px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
+.container > section {
+    box-sizing: border-box;
+    padding: 55px 34px;
+}
+
+/* 个人资料区域 */
 .profile {
-  flex: 0 0 31.2%;
-  position: relative;
-  text-align: center;
-  color: #fff;
-  background: rgba(0,0,0,0.6) url(../imgs/wallpaper.png) no-repeat top center;
-  background-size: cover;
-  text-shadow: 0 2px 2px rgba(0,0,0,0.6);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    position: absolute;
+    text-align: center;
+    width: 31.2%;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6) url(../imgs/wallpaper.png) no-repeat top;
+    background-size: cover;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
+    height: 100%;
 }
 
 .profile .meta {
-  z-index: 1;
-}
-
-.profile .avatar {
-  width: 55%;
-  max-width: 110px;
-  border-radius: 50%;
-  box-shadow: 0 0 6px rgba(0,0,0,0.5);
-  margin-bottom: 14px;
-}
-
-.profile .position {
-  font-size: 13px;
+    position: relative;
+    z-index: 1;
 }
 
 .profile .overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  width: 100%; height: 100%;
-  background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.3));
-  z-index: 0;
-  pointer-events: none;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
 }
 
+.profile .avatar {
+    width: 50%;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.profile .position {
+    font-size: 13px;
+}
+
+/* 作品集区域 */
 .portfolio {
-  flex: 1;
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    margin-left: 31.2%;
+    padding: 50px;
 }
 
 .portfolio p {
-  margin-top: 0;
-  margin-bottom: 10px;
-  line-height: 28px;
+    margin-top: 0;
+    line-height: 28px;
 }
 
-.social {
-  padding-top: 22px;
-  text-align: center;
+.portfolio a {
+    color: #0070ff;
 }
 
-.social .icon {
-  margin: 0 12px;
-  vertical-align: middle;
-  transition: color .25s;
-  display: inline-block;
-}
-
-.social a {
-  color: #7c8891;
-  transition: color .25s;
-  outline: none;
-}
-
-.social a:hover,
-.social a:focus {
-  color: #0070ff;
-}
-
+/* 提示工具和社交链接 */
 .tooltip {
-  position: relative;
-  cursor: pointer;
+    position: relative;
 }
 
-.tooltip:hover::after,
-.tooltip:focus::after {
-  opacity: 1;
-  transform: translate(-50%, -0.2rem);
+.tooltip:focus::after,
+.tooltip:hover::after {
+    opacity: 1;
+    transform: translate(-50%, -0.2rem);
 }
 
 .tooltip::after {
-  background: rgba(48, 55, 66, 0.7);
-  border-radius: 4px;
-  color: #fafafa;
-  content: attr(title);
-  display: block;
-  font-size: 14px;
-  max-width: 260px;
-  opacity: 0;
-  overflow: hidden;
-  padding: 4px 10px;
-  pointer-events: none;
-  position: absolute;
-  left: 50%;
-  top: 110%;
-  white-space: pre;
-  z-index: 300;
-  transform: translate(-50%, 0.4rem);
-  transition: opacity 0.2s, transform 0.2s;
+    background: rgba(48, 55, 66, 0.6);
+    border-radius: 4px;
+    color: #fafafa;
+    content: attr(title);
+    display: block;
+    font-size: 14px;
+    max-width: 300px;
+    opacity: 0;
+    overflow: hidden;
+    padding: 3px 6px;
+    pointer-events: none;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    white-space: pre;
+    z-index: 300;
+    transform: translate(-50%, 0.4rem);
+    transition: opacity 0.2s, transform 0.2s;
 }
 
+.social {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.social i {
+    margin: 0 10px;
+}
+
+.social a {
+    color: #7c8891;
+    transition: color .25s;
+}
+.social a:hover,
+.social a:focus {
+    color: #0070ff;
+}
+
+/* 页脚 */
 .footer {
-  transition: opacity 1.2s, transform 1.2s;
-  transform: translateY(40px);
-  color: #bfc4c7;
-  padding: 18px 0 14px;
-  text-align: center;
-  opacity: 0;
-  font-size: 14px;
+    transition: opacity 1s, transform 1s;
+    transform: translateY(40px);
+    color: #bfc4c7;
+    padding: 20px 0;
+    opacity: 0;
+    font-size: 14px;
+    text-align: center;
 }
 
-.footer .icon {
-  margin: 0 7px;
-  vertical-align: middle;
+.footer i {
+    margin: 0 6px;
+    vertical-align: middle;
 }
 
 .text-center {
-  text-align: center;
+    text-align: center;
 }
 
 .label {
-  display: inline-block;
-  color: #fbfbfb;
-  font-size: 13px;
-  padding: 4px 8px;
-  border-radius: 3px;
-  background: #c5d1d3;
-  margin: 0 6px;
+    display: inline-block;
+    color: #fbfbfb;
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 3px;
+    background: #c5d1d3;
+    margin: 0 6px;
 }
 
 .fadeIn {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
-@media (max-width: 900px) {
-  .container {
-    flex-direction: column;
-    width: 96vw;
-    min-width: unset;
-  }
-  .profile {
-    flex: unset;
-    width: 100%;
-    min-height: 140px;
-    border-radius: 0;
-  }
-  .portfolio {
-    padding: 38px 22px;
-  }
+@media (min-width: 671px) {
+    .profile {
+        height: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 30px;
+    }
+    .container {
+        width: 100%;
+        min-width: 290px;
+    }
 }
 
 @media (max-width: 670px) {
-  body {
-    padding: 12px;
-  }
-  .container {
-    width: 100vw;
-    border-radius: 0;
-    min-width: unset;
-  }
-  .profile .avatar {
-    width: 80px !important;
-  }
-  .portfolio {
-    padding: 32px 8px;
-  }
+    .profile {
+        position: relative;
+        width: 100%;
+        background-size: cover;
+        height: auto;
+    }
+    .profile h1 {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+    .avatar {
+        width: 80px !important;
+    }
+    .portfolio {
+        margin: 0;
+    }
 }
 
 @media (max-width: 420px) {
-  .portfolio {
-    padding: 22px 3vw;
-  }
+    body {
+        padding: 10px;
+    }
+    .container > section {
+        padding: 40px 24.7px !important;
+    }
 }
