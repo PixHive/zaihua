@@ -1,296 +1,235 @@
-/* 基础重置与全局设置 */
-html {
-    line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
-}
-
-body, html {
-    height: 100%;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+html, body {
+  height: 100%;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    color: #7c8891;
-    font: 16px/22px -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, 
-        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
-    background: #ebedee;
-    padding: 50px;
-    overflow: hidden;
+  margin: 0;
+  color: #7c8891;
+  font: 16px/1.375 -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+  background: #ebedee;
+  padding: 50px;
 }
 
 a {
-    background-color: transparent;
+  background-color: transparent;
+  text-decoration: none;
 }
 
 img {
-    border-style: none;
-}
-
-[hidden] {
-    display: none;
+  border-style: none;
+  max-width: 100%;
+  height: auto;
 }
 
 h1 {
-    margin: 10px 0;
-    line-height: 30px;
-    font-size: 24px;
+  margin: 10px 0;
+  line-height: 30px;
+  font-size: 24px;
 }
 
-/* 布局容器 */
 .wrapper {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .container {
-    opacity: 0;
-    transition: opacity 1s ease, -webkit-transform 1s ease;
-    -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
-    -o-transition: transform 1s ease, opacity 1s ease;
-    transition: transform 1s ease, opacity 1s ease;
-    transition: transform 1s ease, opacity 1s ease, -webkit-transform 1s ease;
-    -webkit-transform: translateY(-40px);
-    -ms-transform: translateY(-40px);
-    transform: translateY(-40px);
-    position: relative;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 80%;
-    background: #fff;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    overflow: hidden;
-    max-width: 700px;
-    -webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1), transform 1.2s cubic-bezier(0.4,0,0.2,1);
+  transform: translateY(-40px);
+  position: relative;
+  width: 80vw;
+  max-width: 700px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 1.5px 4px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: row;
+  min-height: 350px;
 }
 
-.container > div {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 55px 34px;
-}
-
-/* 个人资料区域 */
 .profile {
-    position: absolute;
-    text-align: center;
-    width: 31.2%;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.6) url(../imgs/wallpaper.png) no-repeat top;
-    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
+  flex: 0 0 31.2%;
+  position: relative;
+  text-align: center;
+  color: #fff;
+  background: rgba(0,0,0,0.6) url(../imgs/wallpaper.png) no-repeat top center;
+  background-size: cover;
+  text-shadow: 0 2px 2px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile .meta {
-    position: relative;
-    z-index: 1;
-}
-
-.profile .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.3)));
-    background: -o-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+  z-index: 1;
 }
 
 .profile .avatar {
-    width: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    overflow: hidden;
-    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  width: 55%;
+  max-width: 110px;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0,0,0,0.5);
+  margin-bottom: 14px;
 }
 
 .profile .position {
-    font-size: 13px;
+  font-size: 13px;
 }
 
-/* 作品集区域 */
+.profile .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.3));
+  z-index: 0;
+  pointer-events: none;
+}
+
 .portfolio {
-    margin-left: 31.2%;
-    padding: 50px;
+  flex: 1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .portfolio p {
-    margin-top: 0;
-    line-height: 28px;
-}
-
-.portfolio a {
-    color: #0070ff;
-    text-decoration: none;
-}
-
-/* 提示工具和社交链接 */
-.tooltip {
-    position: relative;
-}
-
-.tooltip:focus::after,
-.tooltip:hover::after {
-    opacity: 1;
-    -webkit-transform: translate(-50%, -0.2rem);
-    -ms-transform: translate(-50%, -0.2rem);
-    transform: translate(-50%, -0.2rem);
-}
-
-.tooltip::after {
-    background: rgba(48, 55, 66, 0.6);
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    color: #fafafa;
-    content: attr(title);
-    display: block;
-    margin-top: 4px;
-    font-size: 14px;
-    max-width: 300px;
-    opacity: 0;
-    overflow: hidden;
-    padding: 3px 6px;
-    pointer-events: none;
-    position: absolute;
-    -o-text-overflow: ellipsis;
-    text-overflow: ellipsis;
-    -webkit-transform: translate(-50%, 0.4rem);
-    -ms-transform: translate(-50%, 0.4rem);
-    transform: translate(-50%, 0.4rem);
-    -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
-    transition: opacity 0.2s, -webkit-transform 0.2s;
-    -o-transition: opacity 0.2s, transform 0.2s;
-    transition: opacity 0.2s, transform 0.2s;
-    transition: opacity 0.2s, transform 0.2s, -webkit-transform 0.2s;
-    white-space: pre;
-    z-index: 300;
-    left: 50%;
-    bottom: auto;
-    top: 100%;
+  margin-top: 0;
+  margin-bottom: 10px;
+  line-height: 28px;
 }
 
 .social {
-    padding-top: 20px;
-    text-align: center;
+  padding-top: 22px;
+  text-align: center;
 }
 
-.social i {
-    margin: 0 10px;
+.social .icon {
+  margin: 0 12px;
+  vertical-align: middle;
+  transition: color .25s;
+  display: inline-block;
 }
 
 .social a {
-    color: #7c8891;
+  color: #7c8891;
+  transition: color .25s;
+  outline: none;
 }
 
-/* 页脚 */
+.social a:hover,
+.social a:focus {
+  color: #0070ff;
+}
+
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+.tooltip:hover::after,
+.tooltip:focus::after {
+  opacity: 1;
+  transform: translate(-50%, -0.2rem);
+}
+
+.tooltip::after {
+  background: rgba(48, 55, 66, 0.7);
+  border-radius: 4px;
+  color: #fafafa;
+  content: attr(title);
+  display: block;
+  font-size: 14px;
+  max-width: 260px;
+  opacity: 0;
+  overflow: hidden;
+  padding: 4px 10px;
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  top: 110%;
+  white-space: pre;
+  z-index: 300;
+  transform: translate(-50%, 0.4rem);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
 .footer {
-    transition: opacity 1s ease, -webkit-transform 1s ease;
-    -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
-    -o-transition: transform 1s ease, opacity 1s ease;
-    transition: transform 1s ease, opacity 1s ease;
-    transition: transform 1s ease, opacity 1s ease, -webkit-transform 1s ease;
-    -webkit-transform: translateY(40px);
-    -ms-transform: translateY(40px);
-    transform: translateY(40px);
-    color: #bfc4c7;
-    padding: 20px 0;
-    opacity: 0;
+  transition: opacity 1.2s, transform 1.2s;
+  transform: translateY(40px);
+  color: #bfc4c7;
+  padding: 18px 0 14px;
+  text-align: center;
+  opacity: 0;
+  font-size: 14px;
 }
 
-.footer i {
-    margin: 0 6px;
+.footer .icon {
+  margin: 0 7px;
+  vertical-align: middle;
 }
 
-/* 工具类 */
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
 .label {
-    display: normal;
-    color: #fbfbfb;
-    text-decoration: none;
-    font-size: 13px;
-    padding: 4px 8px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    background: #c5d1d3;
+  display: inline-block;
+  color: #fbfbfb;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 3px;
+  background: #c5d1d3;
+  margin: 0 6px;
 }
 
 .fadeIn {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
-/* 媒体查询 - 响应式布局 */
-@media (min-width: 671px) {
-    .profile {
-        height: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        padding: 30px;
-    }
-    
-    .container {
-        width: 100%;
-        min-width: 290px;
-    }
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    width: 96vw;
+    min-width: unset;
+  }
+  .profile {
+    flex: unset;
+    width: 100%;
+    min-height: 140px;
+    border-radius: 0;
+  }
+  .portfolio {
+    padding: 38px 22px;
+  }
 }
 
 @media (max-width: 670px) {
-    .profile {
-        position: relative;
-        width: 100%;
-        background-size: cover;
-    }
-    
-    .profile h1 {
-        font-size: 20px;
-        margin-bottom: 5px;
-    }
-    
-    .avatar {
-        width: 80px !important;
-    }
-    
-    .portfolio {
-        margin: 0;
-    }
+  body {
+    padding: 12px;
+  }
+  .container {
+    width: 100vw;
+    border-radius: 0;
+    min-width: unset;
+  }
+  .profile .avatar {
+    width: 80px !important;
+  }
+  .portfolio {
+    padding: 32px 8px;
+  }
 }
 
 @media (max-width: 420px) {
-    body {
-        padding: 10px;
-    }
-    
-    .container > div {
-        padding: 40px 24.7px !important;
-    }
+  .portfolio {
+    padding: 22px 3vw;
+  }
 }
