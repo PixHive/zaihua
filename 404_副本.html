@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>哎呀，迷路了！- 404</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: #f9f7f4;
+            color: #555;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .container {
+            max-width: 600px;
+            padding: 40px 20px;
+            animation: fadeIn 1s ease;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 24px;
+            color: #ff6b6b;
+            font-weight: 700;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #777;
+        }
+        
+        .home-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #ff6b6b;
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+        }
+        
+        .home-button:hover {
+            transform: translateY(-3px);
+            background-color: #ff5252;
+        }
+        
+        .cat-container {
+            position: relative;
+            height: 180px;
+            margin: 40px 0;
+        }
+        
+        .cat {
+            position: absolute;
+            width: 120px;
+            height: 80px;
+            background-color: #5e5e5e;
+            border-radius: 0 80px 80px 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .cat::before, .cat::after {
+            content: "";
+            position: absolute;
+            background-color: #5e5e5e;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            top: -15px;
+        }
+        
+        .cat::before {
+            left: 15px;
+        }
+        
+        .cat::after {
+            right: 45px;
+        }
+        
+        .face {
+            position: absolute;
+            width: 80px;
+            height: 60px;
+            background-color: #fafafa;
+            border-radius: 40px;
+            top: 10px;
+            right: 10px;
+        }
+        
+        .eye {
+            position: absolute;
+            width: 12px;
+            height: 16px;
+            background-color: #333;
+            border-radius: 50%;
+            top: 20px;
+            animation: blink 4s infinite;
+        }
+        
+        .eye.left {
+            right: 52px;
+        }
+        
+        .eye.right {
+            right: 22px;
+        }
+        
+        .nose {
+            position: absolute;
+            width: 10px;
+            height: 8px;
+            background-color: #ff9d9d;
+            border-radius: 50%;
+            top: 32px;
+            right: 38px;
+        }
+        
+        .tail {
+            position: absolute;
+            width: 60px;
+            height: 15px;
+            background-color: #5e5e5e;
+            left: -40px;
+            top: 32px;
+            border-radius: 15px 0 0 15px;
+            transform-origin: right center;
+            animation: tail 3s infinite;
+        }
+        
+        .paw {
+            position: absolute;
+            width: 20px;
+            height: 10px;
+            background-color: #5e5e5e;
+            border-radius: 10px 10px 0 0;
+            bottom: -10px;
+        }
+        
+        .paw.left {
+            left: 20px;
+        }
+        
+        .paw.right {
+            left: 60px;
+        }
+        
+        .question-mark {
+            position: absolute;
+            font-size: 80px;
+            color: rgba(0, 0, 0, 0.1);
+            transform: rotate(20deg);
+            right: -20px;
+            top: -50px;
+            font-weight: bold;
+        }
+        
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #ff6b6b;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: particles 15s infinite linear;
+        }
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes blink {
+            0%, 45%, 50%, 55%, 100% {
+                transform: scaleY(1);
+            }
+            48%, 52% {
+                transform: scaleY(0.1);
+            }
+        }
+        
+        @keyframes tail {
+            0%, 100% {
+                transform: rotate(-5deg);
+            }
+            50% {
+                transform: rotate(5deg);
+            }
+        }
+        
+        @keyframes particles {
+            0% {
+                transform: translate(0, 0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translate(var(--x), var(--y));
+                opacity: 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            .cat-container {
+                transform: scale(0.8);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <h1>404</h1>
+        <p>哎呀！这个页面好像走丢了...</p>
+        
+        <div class="cat-container">
+            <div class="cat">
+                <div class="face">
+                    <div class="eye left"></div>
+                    <div class="eye right"></div>
+                    <div class="nose"></div>
+                </div>
+                <div class="tail"></div>
+                <div class="paw left"></div>
+                <div class="paw right"></div>
+                <div class="question-mark">?</div>
+            </div>
+        </div>
+        
+        <p>这只小猫也在寻找回家的路，不如我们一起...</p>
+        <a href="/" class="home-button">返回首页</a>
+    </div>
+    
+    <script>
+        // 创建漂浮的粒子背景
+        const particlesContainer = document.getElementById('particles');
+        const particlesCount = 20;
+        
+        for (let i = 0; i < particlesCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            // 随机位置和大小
+            const size = Math.random() * 6 + 4;
+            const initialX = Math.random() * 100;
+            const initialY = Math.random() * 100;
+            const finalX = initialX + (Math.random() - 0.5) * 50;
+            const finalY = initialY + Math.random() * 100;
+            
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${initialX}%`;
+            particle.style.top = `${initialY}%`;
+            particle.style.setProperty('--x', `${finalX - initialX}vw`);
+            particle.style.setProperty('--y', `${finalY - initialY}vh`);
+            
+            // 随机延迟和颜色
+            particle.style.animationDelay = `${Math.random() * 5}s`;
+            const hue = 340 + Math.random() * 40;
+            particle.style.backgroundColor = `hsl(${hue}, 100%, 70%)`;
+            
+            particlesContainer.appendChild(particle);
+        }
+    </script>
+</body>
+</html>
