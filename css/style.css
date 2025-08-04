@@ -121,14 +121,18 @@ h1 {
 
 /* 作品集区域 */
 .portfolio {
-    /* **已修复**：使用 flex: 1 来填充剩余空间，而不是使用 margin-left */
     flex: 1;
     padding: 50px;
+    /* 新增：使内容居中 */
+    text-align: center;
 }
 
-.portfolio p {
-    margin-top: 0;
-    line-height: 28px;
+/* 新增：针对引言进行美化 */
+.portfolio .quote {
+    margin: 20px auto;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 32px;
 }
 
 .portfolio a {
