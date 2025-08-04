@@ -22,12 +22,21 @@ body.about-page .container {
     width: 90%;
 }
 
-/* 文档内容的具体样式 */
+/* 文档内容的具体样式 - 已调整为居中 */
 body.about-page .portfolio {
     padding: 20px 30px;
     max-width: 800px;
     margin: 0 auto;
-    text-align: left;
+    text-align: center; /* 主要内容居中对齐 */
+}
+
+/* 保持段落文本左对齐以方便阅读 */
+body.about-page .portfolio p {
+    line-height: 1.8;
+    margin-bottom: 1.5em;
+    font-size: 1.1em;
+    color: var(--text-color);
+    text-align: left; /* 段落文本左对齐 */
 }
 
 body.about-page .portfolio h2 {
@@ -37,13 +46,24 @@ body.about-page .portfolio h2 {
     padding-bottom: 0.5em;
 }
 
-body.about-page .portfolio p {
-    line-height: 1.8;
-    margin-bottom: 1.5em;
-    font-size: 1.1em;
-    color: var(--text-color);
+/* 返回主页按钮的样式 */
+.back-to-home-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    transition: transform 0.3s ease;
 }
-    
+
+.back-to-home-btn:hover {
+    transform: translateY(-2px);
+}
+
 /* 移动端适配 */
 @media (max-width: 768px) {
     body.about-page .portfolio {
@@ -52,5 +72,11 @@ body.about-page .portfolio p {
     
     body.about-page .portfolio h2 {
         font-size: 1.5em;
+    }
+    
+    .back-to-home-btn {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 20px;
     }
 }
