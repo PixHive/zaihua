@@ -44,14 +44,15 @@ a:hover {
 }
 
 /* ========================================================= */
-/* 1. 布局和容器 (已修复滚动问题) */
+/* 1. 布局和容器 (已恢复主页原始样式，并修复滚动问题) */
 /* ========================================================= */
 
 .wrapper {
     display: flex;
     justify-content: center;
+    align-items: center; /* 恢复垂直居中 */
     flex-direction: column;
-    min-height: 100vh; /* 确保最小高度为视窗高度，但允许随内容增长 */
+    height: 100%; /* 恢复原始高度 */
 }
 
 .container {
@@ -66,8 +67,6 @@ a:hover {
     max-width: 700px;
     box-shadow: var(--box-shadow);
     display: flex;
-    flex-direction: column; /* 调整为列布局以适应文档样式 */
-    margin: 50px auto; /* 居中并增加上下边距 */
 }
 
 .container > section {
@@ -129,7 +128,7 @@ a:hover {
 }
 
 /* ========================================================= */
-/* 3. 主要内容区域 (主页和子页通用) */
+/* 3. 主要内容区域 */
 /* ========================================================= */
 
 .portfolio {
@@ -163,10 +162,6 @@ a:hover {
     transform: translateY(-2px);
 }
 
-.portfolio .social svg {
-    vertical-align: middle;
-}
-
 .link-to-subpage {
     display: block;
     margin-top: 20px;
@@ -184,32 +179,7 @@ a:hover {
 }
 
 /* ========================================================= */
-/* 4. 子页面文档样式 (为 about.html 优化) */
-/* ========================================================= */
-
-.about-page .portfolio {
-    padding: 50px 30px;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.about-page .portfolio h2 {
-    font-size: 1.8em;
-    margin-bottom: 0.8em;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 0.5em;
-}
-
-.about-page .portfolio p {
-    line-height: 1.8;
-    margin-bottom: 1.5em;
-    font-size: 1.1em;
-    color: var(--text-color);
-}
-
-/* ========================================================= */
-/* 5. 页脚 */
+/* 4. 页脚 */
 /* ========================================================= */
 
 .footer {
@@ -225,7 +195,7 @@ a:hover {
 }
 
 /* ========================================================= */
-/* 6. 移动端适配 */
+/* 5. 移动端适配 */
 /* ========================================================= */
 
 @media (max-width: 768px) {
@@ -249,9 +219,5 @@ a:hover {
 
     .portfolio .quote p {
         font-size: 1em;
-    }
-
-    .about-page .portfolio h2 {
-        font-size: 1.5em;
     }
 }
