@@ -73,7 +73,7 @@ h1 {
     overflow: hidden;
     max-width: 700px;
     box-shadow: var(--box-shadow);
-    display: flex; /* 使用Flexbox简化响应式布局 */
+    display: flex;
 }
 
 .container > section {
@@ -121,7 +121,8 @@ h1 {
 
 /* 作品集区域 */
 .portfolio {
-    margin-left: 31.2%;
+    /* **已修复**：使用 flex: 1 来填充剩余空间，而不是使用 margin-left */
+    flex: 1;
     padding: 50px;
 }
 
@@ -233,7 +234,7 @@ h1 {
 
 @media (max-width: 670px) {
     .container {
-        flex-direction: column; /* 小屏上将Flexbox布局改为纵向排列 */
+        flex-direction: column;
     }
     .profile {
         position: relative;
@@ -246,12 +247,11 @@ h1 {
         margin-bottom: 5px;
     }
     .profile .avatar {
-        width: 80px; /* 移除!important */
+        width: 80px;
     }
     .portfolio {
-        width: 100%; /* 确保作品集区域占据全部宽度 */
-        margin: 0;
-        padding: 40px 24.7px; /* 移除!important */
+        width: 100%;
+        padding: 40px 24.7px;
     }
 }
 
