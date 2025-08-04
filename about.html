@@ -56,8 +56,7 @@
                 <p>
                     再次感谢您的来访。愿世界摆脱痛苦和疾病，愿人类充满温暖和善意。
                 </p>
-                
-                </section>
+            </section>
         </div>
         
         <footer class="footer text-center">
@@ -78,4 +77,9 @@
             document.querySelector(".footer").classList.add("fadeIn");
             const currentYear = new Date().getFullYear();
             if (currentYear > 2017) {
-                document.getElementById("year
+                document.getElementById("year-span").textContent = "-" + currentYear;
+            }
+        });
+    </script>
+</body>
+</html>
