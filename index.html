@@ -6,30 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta http-equiv="x-dns-prefetch-control" content="on">
     
-    <title>在花(@ZAIHUA)</title>
-    <meta name="description" content="在花的个人主页 - 分享美丽的事物">
-    <meta name="keywords" content="科技花,在花,zaihua,在花博客">
+    <title>在花(@ZAIHUA) - 个人主页</title>
+    <meta name="description" content="在花(@ZAIHUA)的个人主页，分享美丽的事物与个人想法。">
+    <meta name="keywords" content="科技花,在花,zaihua,在花博客,个人主页,分享">
     <meta name="author" content="在花">
     
-    <!-- 预加载关键资源 -->
     <link rel="preconnect" href="https://cn.vercount.one">
     
-    <!-- 图标资源 -->
     <link rel="apple-touch-icon" sizes="180x180" href="imgs/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon/favicon-16x16.png">
     <link rel="mask-icon" href="imgs/favicon/safari-pinned-tab.svg" color="#fcfcfc">
     <link rel="shortcut icon" href="imgs/favicon/favicon.ico">
     
-    <!-- Open Graph 协议 -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="在花(@ZAIHUA)">
     <meta property="og:url" content="https://www.zaihua.net">
     <meta property="og:image" content="imgs/avatar.jpg">
     <meta property="og:description" content="在花的主页 - 美丽的东西存在于世上">
     <meta name="twitter:card" content="summary">
-	
-    <!-- 结构化数据 -->
+    
     <script type="application/ld+json">
     {
         "@context": "http://schema.org",
@@ -62,13 +58,11 @@
     }
     </script>
 
-    <!-- 样式表 -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="wrapper">
         <div class="container">
-            <!-- 个人信息模块 -->
             <section class="profile">
                 <div class="meta">
                     <img class="avatar" src="imgs/avatar.jpg" alt="在花的头像" loading="lazy">
@@ -78,15 +72,12 @@
                 <div class="overlay"></div>
             </section>
 
-            <!-- 主要内容区域 -->	
             <section class="portfolio">
                 <p>May the world be free of pain and illness</p>
                 <p>May humanity be filled with warmth and kindness</p>
-                <!-- 社交链接 -->
-                <div class="social"> 
+                <div class="social">
                     <a class="tooltip" title="轻松音乐" href="https://www.youtube.com/watch?v=Hz66uP25408" rel="noopener external nofollow noreferrer" aria-label="轻松音乐" target="_blank">
                         <i>
-                            <!-- SVG略，保留原内容 -->
                             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-icon="typewriter" data-prefix="fad" width="20px" height="20px" viewBox="0 0 512 512">
                                 <g>
                                     <path fill="currentColor" d="M368 96a16 16 0 01-16-16V0H88a24 24 0 00-24 24v168h83a32 32 0 0122 9l14 14a32 32 0 0022 9h102a32 32 0 0022-9l14-14a32 32 0 0122-9h83V96z" opacity=".4" />
@@ -102,14 +93,13 @@
                                 <path fill="currentColor" d="M1021.10368 160l-155.2 728c-11.2 51.2-41.6 64-84.8 40L545.90368 756.8 432.30368 865.6c-12.8 12.8-22.4 22.4-48 22.4l17.6-240 436.8-393.6c19.2-17.6-4.8-25.6-28.8-9.6L269.10368 584 37.10368 512c-51.2-16-51.2-51.2 11.2-75.2L955.50368 86.4c43.2-14.4 80 9.6 65.6 73.6z" p-id="7129"></path>
                             </svg>
                         </i>
-                    </a> 
+                    </a>
                 </div>
             </section>
         </div>
 
-        <!-- 页脚 -->
         <footer class="footer text-center">
-            <a href="https://i.skk.moe" target="_blank" rel="noopener" class="label">©2017<script>document.write(new Date().getFullYear()>2017 ? "-"+new Date().getFullYear() : "");</script></a>
+            <a href="https://i.skk.moe" target="_blank" rel="noopener" class="label">©2017<span id="year-span"></span></a>
             
             <i>
                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-icon="heart" data-prefix="fas" width="12px" height="12px" viewBox="0 0 512 512">
@@ -121,12 +111,18 @@
         </footer>
     </div>
 
-    <!-- 脚本 -->
     <script async src="https://cn.vercount.one/js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            document.getElementsByClassName("container")[0].classList.add("fadeIn");
-            document.getElementsByClassName("footer")[0].classList.add("fadeIn");
+            // 页面加载动画
+            document.querySelector(".container").classList.add("fadeIn");
+            document.querySelector(".footer").classList.add("fadeIn");
+
+            // 动态更新年份
+            const currentYear = new Date().getFullYear();
+            if (currentYear > 2017) {
+                document.getElementById("year-span").textContent = "-" + currentYear;
+            }
         });
     </script>
 </body>
