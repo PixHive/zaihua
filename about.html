@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <title>关于我 - 在花(@ZAIHUA)</title>
+    <meta name="description" content="关于在花(@ZAIHUA)的详细信息。">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <section class="profile">
+                <div class="meta">
+                    <img class="avatar" src="imgs/avatar.jpg" alt="在花的头像" loading="lazy">
+                    <h1>关于我</h1>
+                    <div class="position">ZaiHua</div>
+                </div>
+                <div class="overlay"></div>
+            </section>
+
+            <section class="portfolio">
+                <div class="quote">
+                    <p>我热爱生活中的美好事物，</p>
+                    <p>并希望与你分享。</p>
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <p>这是关于我的子页面。您可以在这里写下您的故事、经历或任何想分享的内容。</p>
+                </div>
+            </section>
+        </div>
+        
+        <footer class="footer text-center">
+            <a href="https://i.skk.moe" target="_blank" rel="noopener" class="label">©2017<span id="year-span"></span></a>
+            <i>
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-icon="heart" data-prefix="fas" width="12px" height="12px" viewBox="0 0 512 512">
+                    <path fill="currentColor" d="M462 63c-54-47-136-39-186 13l-20 21-20-21C186 24 105 16 50 63c-63 53-66 149-10 208l193 199c13 13 33 13 46 0l193-199c56-59 53-155-10-208z" />
+                </svg>
+            </i>
+            <a class="label">访问<span id="vercount_value_site_pv">0</span>次</a>
+        </footer>
+    </div>
+    
+    <script defer src="https://events.vercount.one/js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector(".container").classList.add("fadeIn");
+            document.querySelector(".footer").classList.add("fadeIn");
+            const currentYear = new Date().getFullYear();
+            if (currentYear > 2017) {
+                document.getElementById("year-span").textContent = "-" + currentYear;
+            }
+        });
+    </script>
+</body>
+</html>
