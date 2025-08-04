@@ -1,58 +1,65 @@
-/* ========================================================= */
-/* 0. CSS 变量和全局样式 */
-/* ========================================================= */
-
+/*
+ * 全局样式和变量
+ * 使用CSS变量提升可维护性，避免重复值
+ */
 :root {
-    --bg-color: #fcfcfc;
-    --container-bg-color: #ffffff;
-    --text-color: #333;
-    --text-light-color: #666;
-    --link-color: #666;
-    --link-hover-color: #333;
-    --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --primary-color: #0070ff;
+    --text-color: #7c8891;
+    --bg-color: #ebedee;
+    --container-bg-color: #fff;
+    --footer-text-color: #bfc4c7;
+    --footer-label-bg: #c5d1d3;
+    --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    --profile-text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
+    --tooltip-bg: rgba(48, 55, 66, 0.6);
+}
+
+/* 使用通用选择器定义全局盒模型，确保所有元素表现一致 */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
 }
 
 body, html {
     height: 100%;
+}
+
+body {
     margin: 0;
-    font-family: var(--font-family);
-    background-color: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
+    font: 16px/22px -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    background: var(--bg-color);
+    padding: 50px;
 }
 
 a {
+    background-color: transparent;
     text-decoration: none;
-    color: var(--link-color);
-    transition: color 0.3s ease;
 }
 
-a:hover {
-    color: var(--link-hover-color);
+img {
+    border-style: none;
+    max-width: 100%;
+    height: auto;
 }
 
-.text-center {
-    text-align: center;
+h1 {
+    margin: 10px 0;
+    line-height: 30px;
+    font-size: 24px;
 }
 
-/* 页面淡入动画 */
-.fadeIn {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
-
-/* ========================================================= */
-/* 1. 布局和容器 (已恢复主页原始样式，并修复滚动问题) */
-/* ========================================================= */
-
+/* 布局和容器 */
 .wrapper {
     display: flex;
     justify-content: center;
-    align-items: center; /* 恢复垂直居中 */
+    align-items: center;
     flex-direction: column;
-    height: 100%; /* 恢复原始高度 */
+    height: 100%;
 }
 
 .container {
@@ -63,7 +70,7 @@ a:hover {
     width: 80%;
     background: var(--container-bg-color);
     border-radius: 10px;
-    /* overflow: hidden; 已移除，以允许滚动 */
+    overflow: hidden;
     max-width: 700px;
     box-shadow: var(--box-shadow);
     display: flex;
@@ -73,151 +80,190 @@ a:hover {
     padding: 55px 34px;
 }
 
-/* ========================================================= */
-/* 2. 个人信息模块 (主页样式) */
-/* ========================================================= */
-
+/* 个人资料区域 */
 .profile {
     position: relative;
-    height: 300px;
-    border-radius: 10px 10px 0 0;
-    overflow: hidden;
-    background: linear-gradient(135deg, #a8c0ff, #3f2b96);
-    color: white;
+    text-align: center;
+    width: 31.2%;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6) url(../imgs/wallpaper.png) no-repeat top;
+    background-size: cover;
+    text-shadow: var(--profile-text-shadow);
+    height: 100%;
+}
+
+.profile .meta {
+    position: relative;
+    z-index: 1;
 }
 
 .profile .overlay {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-}
-
-.profile .meta {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    text-align: center;
+    background: var(--profile-overlay-gradient);
 }
 
 .profile .avatar {
-    width: 100px;
-    height: 100px;
+    width: 50%;
     border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-    border: 3px solid white;
-}
-
-.profile h1 {
-    margin: 0;
-    font-size: 2em;
-    font-weight: bold;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
 }
 
 .profile .position {
-    margin-top: 5px;
-    font-size: 1.2em;
-    opacity: 0.8;
+    font-size: 13px;
 }
 
-/* ========================================================= */
-/* 3. 主要内容区域 */
-/* ========================================================= */
-
+/* 作品集区域 */
 .portfolio {
-    padding: 20px;
+    flex: 1;
+    padding: 50px;
+    /* 新增：使内容居中 */
     text-align: center;
 }
 
-.portfolio .quote p {
-    margin: 0;
-    font-size: 1.1em;
-    color: var(--text-light-color);
+/* 新增：针对引言进行美化 */
+.portfolio .quote {
+    margin: 20px auto;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 32px;
 }
 
-.portfolio .social {
-    margin: 30px 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.portfolio a {
+    color: var(--primary-color);
 }
 
-.portfolio .social a {
-    color: var(--link-color);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    transition: transform 0.2s ease-in-out;
+/* 提示工具和社交链接 */
+.tooltip {
+    position: relative;
 }
 
-.portfolio .social a:hover {
-    transform: translateY(-2px);
+.tooltip:focus::after,
+.tooltip:hover::after {
+    opacity: 1;
+    transform: translate(-50%, -0.2rem);
 }
 
-.link-to-subpage {
+.tooltip::after {
+    background: var(--tooltip-bg);
+    border-radius: 4px;
+    color: #fafafa;
+    content: attr(title);
     display: block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: 1px solid var(--text-light-color);
-    border-radius: 5px;
-    color: var(--text-light-color);
-    transition: all 0.3s ease;
+    font-size: 14px;
+    max-width: 300px;
+    opacity: 0;
+    overflow: hidden;
+    padding: 3px 6px;
+    pointer-events: none;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    white-space: pre;
+    z-index: 300;
+    transform: translate(-50%, 0.4rem);
+    transition: opacity 0.2s, transform 0.2s;
 }
 
-.link-to-subpage:hover {
-    background-color: var(--text-color);
-    color: white;
-    border-color: var(--text-color);
+.social {
+    padding-top: 20px;
+    text-align: center;
 }
 
-/* ========================================================= */
-/* 4. 页脚 */
-/* ========================================================= */
+.social i {
+    margin: 0 10px;
+}
 
+.social a {
+    color: var(--text-color);
+    transition: color .25s;
+}
+
+.social a:hover,
+.social a:focus {
+    color: var(--primary-color);
+}
+
+/* 页脚 */
 .footer {
-    width: 100%;
-    margin-top: 40px;
+    transition: opacity 1s, transform 1s;
+    transform: translateY(40px);
+    color: var(--footer-text-color);
     padding: 20px 0;
-    color: var(--text-light-color);
-    font-size: 0.9em;
+    opacity: 0;
+    font-size: 14px;
+    text-align: center;
 }
 
-.footer .label {
-    padding: 0 5px;
+.footer i {
+    margin: 0 6px;
+    vertical-align: middle;
 }
 
-/* ========================================================= */
-/* 5. 移动端适配 */
-/* ========================================================= */
+.text-center {
+    text-align: center;
+}
 
+.label {
+    display: inline-block;
+    color: #fbfbfb;
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 3px;
+    background: var(--footer-label-bg);
+    margin: 0 6px;
+}
+
+.fadeIn {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* 响应式设计 - 针对不同屏幕尺寸进行优化 */
 @media (max-width: 768px) {
+    body {
+        padding: 30px;
+    }
     .container {
-        width: 90%;
-        margin: 20px auto;
-        padding: 0;
+        width: 100%;
+        min-width: 290px;
     }
-    
-    .container > section {
-        padding: 30px 15px;
-    }
+}
 
+@media (max-width: 670px) {
+    .container {
+        flex-direction: column;
+    }
+    .profile {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 40px 24px;
+    }
     .profile h1 {
-        font-size: 1.5em;
+        font-size: 20px;
+        margin-bottom: 5px;
     }
-
-    .profile .position {
-        font-size: 1em;
+    .profile .avatar {
+        width: 80px;
     }
+    .portfolio {
+        width: 100%;
+        padding: 40px 24.7px;
+    }
+}
 
-    .portfolio .quote p {
-        font-size: 1em;
+@media (max-width: 420px) {
+    body {
+        padding: 10px;
+    }
+    .profile, .portfolio {
+        padding: 40px 24.7px;
     }
 }
