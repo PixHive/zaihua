@@ -9,8 +9,10 @@ body.about-page {
 
 /* 调整容器，使其在“关于我”页面中正常显示 */
 body.about-page .wrapper {
-    align-items: flex-start; /* 不再强制垂直居中，允许内容从顶部开始 */
-    height: auto; /* 允许高度随内容增长 */
+    display: flex; /* 确保wrapper的flex布局 */
+    flex-direction: column;
+    align-items: center; /* 让wrapper内的内容居中 */
+    height: auto;
     min-height: 100vh;
 }
 
@@ -44,25 +46,26 @@ body.about-page .portfolio h2 {
     margin-bottom: 0.8em;
     border-bottom: 1px solid #eee;
     padding-bottom: 0.5em;
+    text-align: center; /* 确保标题也居中 */
 }
 
-/* 返回主页按钮的样式 */
-.back-to-home-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* 新的返回主页按钮样式 */
+.back-link {
+    display: block;
+    margin-top: 20px;
+    padding-top: 20px;
+    text-align: right; /* 让链接本身位于容器右侧 */
+    font-size: 1.1em;
     font-weight: bold;
-    transition: transform 0.3s ease;
 }
 
-.back-to-home-btn:hover {
-    transform: translateY(-2px);
+.back-link::before {
+    content: '--->';
+    margin-right: 5px;
+    font-size: 1.2em;
+    font-weight: normal;
 }
+
 
 /* 移动端适配 */
 @media (max-width: 768px) {
@@ -72,11 +75,5 @@ body.about-page .portfolio h2 {
     
     body.about-page .portfolio h2 {
         font-size: 1.5em;
-    }
-    
-    .back-to-home-btn {
-        bottom: 15px;
-        right: 15px;
-        padding: 10px 20px;
     }
 }
