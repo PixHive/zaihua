@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>页面未找到 - 404</title>
+    <title>404 - 页面未找到</title>
     <style>
         * {
             margin: 0;
@@ -13,191 +13,59 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #f8f9fa;
             color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             text-align: center;
-            overflow: hidden;
         }
         
         .container {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 60px 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            width: 90%;
-            animation: slideUp 0.8s ease-out;
+            max-width: 400px;
+            padding: 40px 20px;
         }
         
         .error-code {
-            font-size: 8rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 6rem;
+            font-weight: 300;
+            color: #0070ff;
             margin-bottom: 20px;
             line-height: 1;
         }
         
-        .error-title {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 15px;
-        }
-        
-        .error-message {
-            font-size: 1.1rem;
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 40px;
-        }
-        
         .home-button {
             display: inline-block;
-            padding: 15px 30px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 12px 24px;
+            background: #0070ff;
             color: white;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease;
         }
         
         .home-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
-        }
-        
-        .home-button:active {
-            transform: translateY(-1px);
-        }
-        
-        .floating-shapes {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-        
-        .shape {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .shape:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-        
-        .shape:nth-child(2) {
-            width: 60px;
-            height: 60px;
-            top: 60%;
-            right: 10%;
-            animation-delay: 2s;
-        }
-        
-        .shape:nth-child(3) {
-            width: 40px;
-            height: 40px;
-            top: 80%;
-            left: 20%;
-            animation-delay: 4s;
-        }
-        
-        .shape:nth-child(4) {
-            width: 100px;
-            height: 100px;
-            top: 10%;
-            right: 20%;
-            animation-delay: 1s;
-        }
-        
-        .shape:nth-child(5) {
-            width: 50px;
-            height: 50px;
-            top: 40%;
-            left: 80%;
-            animation-delay: 3s;
-        }
-        
-        @keyframes slideUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(180deg);
-            }
+            background: #0056cc;
         }
         
         @media (max-width: 480px) {
-            .container {
-                padding: 40px 20px;
-            }
-            
             .error-code {
-                font-size: 6rem;
-            }
-            
-            .error-title {
-                font-size: 1.5rem;
-            }
-            
-            .error-message {
-                font-size: 1rem;
+                font-size: 4rem;
             }
             
             .home-button {
-                padding: 12px 25px;
-                font-size: 0.9rem;
+                padding: 10px 20px;
+                font-size: 0.85rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="floating-shapes">
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
-    </div>
-    
     <div class="container">
         <div class="error-code">404</div>
-        <h1 class="error-title">页面未找到</h1>
-        <p class="error-message">
-            抱歉，您访问的页面不存在或已被移动。<br>
-            请检查网址是否正确，或返回首页继续浏览。
-        </p>
         <a href="/" class="home-button">返回首页</a>
     </div>
 </body>
