@@ -16,6 +16,7 @@
     
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/about-style.css">
+    <script src="js/common.js"></script>
 </head>
 <body class="about-page">
     <div class="wrapper">
@@ -57,14 +58,8 @@
     
     <script defer src="https://events.vercount.one/js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelector(".container").classList.add("fadeIn");
-            document.querySelector(".footer").classList.add("fadeIn");
-            const currentYear = new Date().getFullYear();
-            if (currentYear > 2017) {
-                document.getElementById("year-span").textContent = "-" + currentYear;
-            }
-        });
+        // 使用公共JavaScript功能
+        CommonUtils.initPage();
     </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>哎呀，迷路了！- 404</title>
+    <title>页面未找到 - 404</title>
     <style>
         * {
             margin: 0;
@@ -12,167 +12,76 @@
         }
         
         body {
-            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-            background-color: #f9f7f4;
-            color: #555;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            flex-direction: column;
             text-align: center;
             overflow: hidden;
         }
         
         .container {
-            max-width: 600px;
-            padding: 40px 20px;
-            animation: fadeIn 1s ease;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+            animation: slideUp 0.8s ease-out;
         }
         
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 24px;
-            color: #ff6b6b;
+        .error-code {
+            font-size: 8rem;
             font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            line-height: 1;
         }
         
-        p {
-            font-size: 1.2rem;
+        .error-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .error-message {
+            font-size: 1.1rem;
+            color: #666;
             line-height: 1.6;
-            margin-bottom: 30px;
-            color: #777;
+            margin-bottom: 40px;
         }
         
         .home-button {
             display: inline-block;
-            padding: 12px 24px;
-            background-color: #ff6b6b;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            border-radius: 50px;
             text-decoration: none;
+            border-radius: 50px;
             font-weight: 600;
-            transition: transform 0.3s, background-color 0.3s;
-            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
         }
         
         .home-button:hover {
             transform: translateY(-3px);
-            background-color: #ff5252;
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
         }
         
-        .cat-container {
-            position: relative;
-            height: 180px;
-            margin: 40px 0;
+        .home-button:active {
+            transform: translateY(-1px);
         }
         
-        .cat {
-            position: absolute;
-            width: 120px;
-            height: 80px;
-            background-color: #5e5e5e;
-            border-radius: 0 80px 80px 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .cat::before, .cat::after {
-            content: "";
-            position: absolute;
-            background-color: #5e5e5e;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            top: -15px;
-        }
-        
-        .cat::before {
-            left: 15px;
-        }
-        
-        .cat::after {
-            right: 45px;
-        }
-        
-        .face {
-            position: absolute;
-            width: 80px;
-            height: 60px;
-            background-color: #fafafa;
-            border-radius: 40px;
-            top: 10px;
-            right: 10px;
-        }
-        
-        .eye {
-            position: absolute;
-            width: 12px;
-            height: 16px;
-            background-color: #333;
-            border-radius: 50%;
-            top: 20px;
-            animation: blink 4s infinite;
-        }
-        
-        .eye.left {
-            right: 52px;
-        }
-        
-        .eye.right {
-            right: 22px;
-        }
-        
-        .nose {
-            position: absolute;
-            width: 10px;
-            height: 8px;
-            background-color: #ff9d9d;
-            border-radius: 50%;
-            top: 32px;
-            right: 38px;
-        }
-        
-        .tail {
-            position: absolute;
-            width: 60px;
-            height: 15px;
-            background-color: #5e5e5e;
-            left: -40px;
-            top: 32px;
-            border-radius: 15px 0 0 15px;
-            transform-origin: right center;
-            animation: tail 3s infinite;
-        }
-        
-        .paw {
-            position: absolute;
-            width: 20px;
-            height: 10px;
-            background-color: #5e5e5e;
-            border-radius: 10px 10px 0 0;
-            bottom: -10px;
-        }
-        
-        .paw.left {
-            left: 20px;
-        }
-        
-        .paw.right {
-            left: 60px;
-        }
-        
-        .question-mark {
-            position: absolute;
-            font-size: 80px;
-            color: rgba(0, 0, 0, 0.1);
-            transform: rotate(20deg);
-            right: -20px;
-            top: -50px;
-            font-weight: bold;
-        }
-        
-        .particles {
+        .floating-shapes {
             position: absolute;
             top: 0;
             left: 0;
@@ -182,20 +91,57 @@
             z-index: -1;
         }
         
-        .particle {
+        .shape {
             position: absolute;
-            width: 8px;
-            height: 8px;
-            background-color: #ff6b6b;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            opacity: 0.5;
-            animation: particles 15s infinite linear;
+            animation: float 6s ease-in-out infinite;
         }
         
-        @keyframes fadeIn {
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .shape:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+        
+        .shape:nth-child(3) {
+            width: 40px;
+            height: 40px;
+            top: 80%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        .shape:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            right: 20%;
+            animation-delay: 1s;
+        }
+        
+        .shape:nth-child(5) {
+            width: 50px;
+            height: 50px;
+            top: 40%;
+            left: 80%;
+            animation-delay: 3s;
+        }
+        
+        @keyframes slideUp {
             0% {
                 opacity: 0;
-                transform: translateY(-20px);
+                transform: translateY(30px);
             }
             100% {
                 opacity: 1;
@@ -203,111 +149,56 @@
             }
         }
         
-        @keyframes blink {
-            0%, 45%, 50%, 55%, 100% {
-                transform: scaleY(1);
-            }
-            48%, 52% {
-                transform: scaleY(0.1);
-            }
-        }
-        
-        @keyframes tail {
+        @keyframes float {
             0%, 100% {
-                transform: rotate(-5deg);
+                transform: translateY(0px) rotate(0deg);
             }
             50% {
-                transform: rotate(5deg);
-            }
-        }
-        
-        @keyframes particles {
-            0% {
-                transform: translate(0, 0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.5;
-            }
-            90% {
-                opacity: 0.2;
-            }
-            100% {
-                transform: translate(var(--x), var(--y));
-                opacity: 0;
+                transform: translateY(-20px) rotate(180deg);
             }
         }
         
         @media (max-width: 480px) {
-            h1 {
-                font-size: 2.5rem;
+            .container {
+                padding: 40px 20px;
             }
             
-            p {
+            .error-code {
+                font-size: 6rem;
+            }
+            
+            .error-title {
+                font-size: 1.5rem;
+            }
+            
+            .error-message {
                 font-size: 1rem;
             }
             
-            .cat-container {
-                transform: scale(0.8);
+            .home-button {
+                padding: 12px 25px;
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="particles" id="particles"></div>
-    
-    <div class="container">
-        <h1>404</h1>
-        <p>哎呀！这个页面好像走丢了...</p>
-        
-        <div class="cat-container">
-            <div class="cat">
-                <div class="face">
-                    <div class="eye left"></div>
-                    <div class="eye right"></div>
-                    <div class="nose"></div>
-                </div>
-                <div class="tail"></div>
-                <div class="paw left"></div>
-                <div class="paw right"></div>
-                <div class="question-mark">?</div>
-            </div>
-        </div>
-        
-        <p>这只小猫也在寻找回家的路，不如我们一起...</p>
-        <a href="/" class="home-button">返回首页</a>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
     </div>
     
-    <script>
-        // 创建漂浮的粒子背景
-        const particlesContainer = document.getElementById('particles');
-        const particlesCount = 20;
-        
-        for (let i = 0; i < particlesCount; i++) {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            
-            // 随机位置和大小
-            const size = Math.random() * 6 + 4;
-            const initialX = Math.random() * 100;
-            const initialY = Math.random() * 100;
-            const finalX = initialX + (Math.random() - 0.5) * 50;
-            const finalY = initialY + Math.random() * 100;
-            
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-            particle.style.left = `${initialX}%`;
-            particle.style.top = `${initialY}%`;
-            particle.style.setProperty('--x', `${finalX - initialX}vw`);
-            particle.style.setProperty('--y', `${finalY - initialY}vh`);
-            
-            // 随机延迟和颜色
-            particle.style.animationDelay = `${Math.random() * 5}s`;
-            const hue = 340 + Math.random() * 40;
-            particle.style.backgroundColor = `hsl(${hue}, 100%, 70%)`;
-            
-            particlesContainer.appendChild(particle);
-        }
-    </script>
+    <div class="container">
+        <div class="error-code">404</div>
+        <h1 class="error-title">页面未找到</h1>
+        <p class="error-message">
+            抱歉，您访问的页面不存在或已被移动。<br>
+            请检查网址是否正确，或返回首页继续浏览。
+        </p>
+        <a href="/" class="home-button">返回首页</a>
+    </div>
 </body>
 </html>

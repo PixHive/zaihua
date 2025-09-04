@@ -59,13 +59,14 @@
     </script>
 
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/common.js"></script>
 </head>
 <body>
     <div class="wrapper">
         <div class="container">
             <section class="profile">
                 <div class="meta">
-                    <img class="avatar" src="imgs/avatar.jpg" alt="在花的头像" loading="lazy">
+                    <img class="avatar" src="imgs/avatar.jpg" alt="在花的头像">
                     <h1>在花</h1>
                     <div class="position">ZaiHua</div>
                 </div>
@@ -131,17 +132,8 @@
 
     <script defer src="https://events.vercount.one/js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // 页面加载动画
-            document.querySelector(".container").classList.add("fadeIn");
-            document.querySelector(".footer").classList.add("fadeIn");
-
-            // 动态更新年份
-            const currentYear = new Date().getFullYear();
-            if (currentYear > 2017) {
-                document.getElementById("year-span").textContent = "-" + currentYear;
-            }
-        });
+        // 使用公共JavaScript功能
+        CommonUtils.initPage();
     </script>
 </body>
 </html>
