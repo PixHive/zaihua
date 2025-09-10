@@ -59,6 +59,16 @@ body.about-page .portfolio h2 {
     font-weight: bold;
 }
 
+/* 提高优先级：覆盖 style.css 中 .portfolio a 颜色 */
+.portfolio .back-link {
+    color: var(--text-color); /* 使用主文本色 */
+}
+
+.portfolio .back-link:hover,
+.portfolio .back-link:focus {
+    color: var(--text-color); /* 悬停与聚焦也保持主文本色 */
+}
+
 .back-link::before {
     content: '--->';
     margin-right: 5px;
