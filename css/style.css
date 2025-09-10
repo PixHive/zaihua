@@ -190,9 +190,6 @@ h1 {
 .social a:hover,
 .social a:focus {
     color: var(--primary-color);
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-    border-radius: 4px;
 }
 
 /* 页脚 */
