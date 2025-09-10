@@ -22,13 +22,9 @@ function updateYear() {
     const yearSpan = document.getElementById("year-span");
     if (yearSpan) {
         const currentYear = new Date().getFullYear();
-        if (currentYear > 2017) {
-            yearSpan.textContent = "-" + currentYear;
-        }
+        yearSpan.textContent = String(currentYear);
     }
 }
-
-
 
 // 页面初始化
 function initPage() {
