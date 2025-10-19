@@ -5,10 +5,10 @@
 :root {
     --primary-color: #0070ff;
     --text-color: #7c8891;
-    --bg-color: #ffffff;
+    --bg-color: #ebedee;
     --container-bg-color: #fff;
     --footer-text-color: #bfc4c7;
-    --footer-label-bg: #e5e7eb;
+    --footer-label-bg: #c5d1d3;
     --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
     --profile-text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
     --tooltip-bg: rgba(48, 55, 66, 0.6);
