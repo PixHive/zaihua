@@ -293,6 +293,10 @@ h1 {
 .error-container {
     max-width: 400px;
     padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .error-code {
