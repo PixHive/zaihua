@@ -5,8 +5,5 @@ Allow: /
 Sitemap: https://www.zaihua.net/sitemap.xml
 
 # 禁止访问的文件
-Disallow: /css/
-Disallow: /js/
-Disallow: /imgs/
 Disallow: /.DS_Store
 Disallow: /.git/

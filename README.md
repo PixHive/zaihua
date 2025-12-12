@@ -2,18 +2,18 @@
 
 ## 项目简介
 
-这是一个现代化的个人主页项目，包含主页和关于页面。
+这是一个现代化的个人主页项目。
 
 ## 项目结构
 
 ```
 /
 ├── index.html          # 主页
-├── about.html          # 关于页面
+
 ├── 404.html           # 404错误页面
 ├── css/
 │   ├── style.css      # 主样式文件
-│   └── about-style.css # 关于页面样式
+
 ├── js/
 │   └── common.js      # 公共JavaScript功能
 └── imgs/
