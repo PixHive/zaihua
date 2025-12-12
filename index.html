@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,15 +9,16 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta http-equiv="x-dns-prefetch-control" content="on">
     <meta name="google-site-verification" content="8D7tmHEt1aPTobqm1tNl1_zjDIWWLzxxstWy1WF00yU" />
-    
+
     <title>在花频道 | 在花(@ZAIHUA)个人主页</title>
     <meta name="description" content="在花(@ZAIHUA)的个人主页，分享美丽的事物与个人想法。">
     <meta name="keywords" content="在花,在花频道,zaihua,个人主页,联系方式,个人网站,科技花,在花博客,个人展示">
     <meta name="author" content="在花">
     <link rel="canonical" href="https://www.zaihua.net/">
-    
-    
-    
+    <link rel="preload" as="image" href="imgs/avatar.jpg">
+
+
+
     <link rel="apple-touch-icon" sizes="180x180" href="imgs/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="512x512" href="imgs/favicon/favicon-512x512.png">
     <link rel="icon" type="image/png" sizes="192x192" href="imgs/favicon/android-chrome-192x192.png">
@@ -28,7 +30,7 @@
     <link rel="mask-icon" href="imgs/favicon/safari-pinned-tab.svg" color="#fcfcfc">
     <link rel="shortcut icon" href="imgs/favicon/favicon.ico">
     <link rel="manifest" href="manifest.json">
-    
+
     <meta property="og:type" content="website">
     <meta property="og:title" content="在花频道 | 在花(@ZAIHUA)个人主页">
     <meta property="og:url" content="https://www.zaihua.net">
@@ -36,70 +38,51 @@
     <meta property="og:image" content="imgs/avatar.jpg">
     <meta property="og:description" content="在花(@ZAIHUA)的个人主页，分享美丽的事物与个人想法。">
     <meta name="twitter:card" content="summary">
-    
+    <meta name="twitter:title" content="在花频道 | 在花(@ZAIHUA)个人主页">
+    <meta name="twitter:description" content="在花(@ZAIHUA)的个人主页，分享美丽的事物与个人想法。">
+    <meta name="twitter:image" content="https://www.zaihua.net/imgs/avatar.jpg">
+    <meta name="twitter:creator" content="@ZAIHUA">
+
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "@id": "https://www.zaihua.net/#person",
+        "name": "在花",
+        "alternateName": "ZAIHUA",
+        "url": "https://www.zaihua.net",
+        "image": "https://www.zaihua.net/imgs/avatar.jpg",
+        "description": "在花(@ZAIHUA)的个人主页，分享美丽的事物与个人想法。",
+        "sameAs": [
+            "https://www.zaihua.me",
+            "https://twitter.com/zaihuabot", 
+            "https://t.me/zaihua_bot"
+        ],
+        "knowsAbout": ["Technology", "Design", "Blogging"]
+    }
+    </script>
     <script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "WebSite",
-        "author": {
-            "@type": "Person",
-            "name": "在花",
-            "image": {
-                "@type": "ImageObject",
-                "url": "imgs/avatar.jpg"
-            },
-            "description": "在花(@ZAIHUA)的个人主页，分享美丽的事物与个人想法。"
-        },
         "url": "https://www.zaihua.net",
-        "logo": "imgs/avatar.jpg",
-        "image": {
-            "@type": "ImageObject",
-            "url": "imgs/avatar.jpg" 
+        "name": "在花频道",
+        "author": {
+            "@id": "https://www.zaihua.net/#person"
         },
-        "publisher": {
-            "@id": "https://www.zaihua.net/#organization"
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.zaihua.net"
-        },
-        "keywords": "在花,在花频道,zaihua,个人主页,联系方式,个人网站,科技花,在花博客,个人展示",
         "description": "在花(@ZAIHUA)的个人主页，分享美丽的事物与个人想法。",
         "potentialAction": {
             "@type": "SearchAction",
             "target": "https://www.google.com/search?q=site:zaihua.net+{search_term_string}",
             "query-input": "required name=search_term_string"
-        },
-        "sameAs": [
-            "https://www.zaihua.me",
-            "https://www.zaihua.net"
-        ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "@id": "https://www.zaihua.net/#organization",
-        "name": "在花",
-        "alternateName": "在花频道",
-        "url": "https://www.zaihua.net",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.zaihua.net/imgs/avatar.jpg",
-            "width": 512,
-            "height": 512
-        },
-        "sameAs": [
-            "https://www.zaihua.me",
-            "https://www.zaihua.net"
-        ]
+        }
     }
     </script>
 
     <link rel="stylesheet" href="css/style.css">
     <script src="js/common.js"></script>
 </head>
+
 <body>
     <div class="wrapper">
         <div class="container">
@@ -118,33 +101,46 @@
                     <p>愿人类充满温暖和善意</p>
                 </div>
                 <div class="social">
-                    <a class="tooltip" title="Google" href="https://www.google.com/search?q=%E5%9C%A8%E8%8A%B1" rel="noopener external nofollow noreferrer" aria-label="Google" target="_blank">
+                    <a class="tooltip" title="Google" href="https://www.google.com/search?q=%E5%9C%A8%E8%8A%B1"
+                        rel="noopener external nofollow noreferrer" aria-label="Google" target="_blank">
                         <i>
-                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-icon="typewriter" data-prefix="fad" width="20px" height="20px" viewBox="0 0 512 512">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-icon="typewriter"
+                                data-prefix="fad" width="20px" height="20px" viewBox="0 0 512 512">
                                 <g>
-                                    <path fill="currentColor" d="M368 96a16 16 0 01-16-16V0H88a24 24 0 00-24 24v168h83a32 32 0 0122 9l14 14a32 32 0 0022 9h102a32 32 0 0022-9l14-14a32 32 0 0122-9h83V96z" opacity=".4" />
-                                    <path fill="currentColor" d="M368 96h80v-5a18 18 0 00-5-12L369 5a18 18 0 00-12-5h-5v80a16 16 0 0016 16zm112 96H365a32 32 0 00-22 9l-14 14a32 32 0 01-22 9H205a32 32 0 01-22-9l-14-14a32 32 0 00-22-9H32a32 32 0 00-32 32v32a32 32 0 0032 32v160a64 64 0 0064 64h320a64 64 0 0064-64V288a32 32 0 0032-32v-32a32 32 0 00-32-32zM336 296a8 8 0 018-8h16a8 8 0 018 8v16a8 8 0 01-8 8h-16a8 8 0 01-8-8zm-24 56h16a8 8 0 018 8v16a8 8 0 01-8 8h-16a8 8 0 01-8-8v-16a8 8 0 018-8zm-40-56a8 8 0 018-8h16a8 8 0 018 8v16a8 8 0 01-8 8h-16a8 8 0 01-8-8zm-24 56h16a8 8 0 018 8v16a8 8 0 01-8 8h-16a8 8 0 01-8-8v-16a8 8 0 018-8zm-40-56a8 8 0 018-8h16a8 8 0 018 8v16a8 8 0 01-8 8h-16a8 8 0 01-8-8zm-24 56h16a8 8 0 018 8v16a8 8 0 01-8 8h-16a8 8 0 01-8-8v-16a8 8 0 018-8zm-40-56a8 8 0 018-8h16a8 8 0 018 8v16a8 8 0 01-8 8h-16a8 8 0 01-8-8zm-40 24H88a8 8 0 01-8-8v-16a8 8 0 018-8h16a8 8 0 018 8v16a8 8 0 01-8 8zm32 64h-16a8 8 0 01-8-8v-16a8 8 0 018-8h16a8 8 0 018 8v16a8 8 0 01-8 8zm232 56a8 8 0 01-8 8H152a8 8 0 01-8-8v-16a8 8 0 018-8h208a8 8 0 018 8zm32-64a8 8 0 01-8 8h-16a8 8 0 01-8-8v-16a8 8 0 018-8h16a8 8 0 018 8z" />
+                                    <path fill="currentColor"
+                                        d="M368 96a16 16 0 01-16-16V0H88a24 24 0 00-24 24v168h83a32 32 0 0122 9l14 14a32 32 0 0022 9h102a32 32 0 0022-9l14-14a32 32 0 0122-9h83V96z"
+                                        opacity=".4" />
+                                    <path fill="currentColor"
+                                        d="M368 96h80v-5a18 18 0 00-5-12L369 5a18 18 0 00-12-5h-5v80a16 16 0 0016 16zm112 96H365a32 32 0 00-22 9l-14 14a32 32 0 01-22 9H205a32 32 0 01-22-9l-14-14a32 32 0 00-22-9H32a32 32 0 00-32 32v32a32 32 0 0032 32v160a64 64 0 0064 64h320a64 64 0 0064-64V288a32 32 0 0032-32v-32a32 32 0 00-32-32zM336 296a8 8 0 018-8h16a8 8 0 018 8v16a8 8 0 01-8 8h-16a8 8 0 01-8-8zm-24 56h16a8 8 0 018 8v16a8 8 0 01-8 8h-16a8 8 0 01-8-8v-16a8 8 0 018-8zm-40-56a8 8 0 018-8h16a8 8 0 018 8v16a8 8 0 01-8 8h-16a8 8 0 01-8-8zm-24 56h16a8 8 0 018 8v16a8 8 0 01-8 8h-16a8 8 0 01-8-8v-16a8 8 0 018-8zm-40-56a8 8 0 018-8h16a8 8 0 018 8v16a8 8 0 01-8 8h-16a8 8 0 01-8-8zm-24 56h16a8 8 0 018 8v16a8 8 0 01-8 8h-16a8 8 0 01-8-8v-16a8 8 0 018-8zm-40-56a8 8 0 018-8h16a8 8 0 018 8v16a8 8 0 01-8 8h-16a8 8 0 01-8-8zm-40 24H88a8 8 0 01-8-8v-16a8 8 0 018-8h16a8 8 0 018 8v16a8 8 0 01-8 8zm32 64h-16a8 8 0 01-8-8v-16a8 8 0 018-8h16a8 8 0 018 8v16a8 8 0 01-8 8zm232 56a8 8 0 01-8 8H152a8 8 0 01-8-8v-16a8 8 0 018-8h208a8 8 0 018 8zm32-64a8 8 0 01-8 8h-16a8 8 0 01-8-8v-16a8 8 0 018-8h16a8 8 0 018 8z" />
                                 </g>
                             </svg>
                         </i>
                     </a>
 
-                    <a class="tooltip" title="YouTube" href="https://www.youtube.com/watch?v=tL4QcoNdelg" rel="noopener external nofollow noreferrer" aria-label="YouTube" target="_blank">
+                    <a class="tooltip" title="YouTube" href="https://www.youtube.com/watch?v=tL4QcoNdelg"
+                        rel="noopener external nofollow noreferrer" aria-label="YouTube" target="_blank">
                         <i>
-                            <svg t="1754304878896" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5578" width="20" height="20">
-                                <path fill="currentColor" d="M426.666667 682.666667V384l256 149.845333L426.666667 682.666667z m587.093333-355.541334s-10.026667-71.04-40.704-102.357333c-38.954667-41.088-82.602667-41.258667-102.613333-43.648C727.168 170.666667 512.213333 170.666667 512.213333 170.666667h-0.426666s-214.954667 0-358.229334 10.453333c-20.053333 2.389333-63.658667 2.56-102.656 43.648-30.677333 31.317333-40.661333 102.4-40.661333 102.4S0 410.538667 0 493.952v78.293333c0 83.456 10.24 166.912 10.24 166.912s9.984 71.04 40.661333 102.357334c38.997333 41.088 90.154667 39.765333 112.938667 44.074666C245.76 893.568 512 896 512 896s215.168-0.341333 358.442667-10.752c20.053333-2.432 63.658667-2.602667 102.613333-43.690667 30.72-31.317333 40.704-102.4 40.704-102.4s10.24-83.413333 10.24-166.869333v-78.250667c0-83.456-10.24-166.912-10.24-166.912z" p-id="5579"></path>
+                            <svg t="1754304878896" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" p-id="5578" width="20" height="20">
+                                <path fill="currentColor"
+                                    d="M426.666667 682.666667V384l256 149.845333L426.666667 682.666667z m587.093333-355.541334s-10.026667-71.04-40.704-102.357333c-38.954667-41.088-82.602667-41.258667-102.613333-43.648C727.168 170.666667 512.213333 170.666667 512.213333 170.666667h-0.426666s-214.954667 0-358.229334 10.453333c-20.053333 2.389333-63.658667 2.56-102.656 43.648-30.677333 31.317333-40.661333 102.4-40.661333 102.4S0 410.538667 0 493.952v78.293333c0 83.456 10.24 166.912 10.24 166.912s9.984 71.04 40.661333 102.357334c38.997333 41.088 90.154667 39.765333 112.938667 44.074666C245.76 893.568 512 896 512 896s215.168-0.341333 358.442667-10.752c20.053333-2.432 63.658667-2.602667 102.613333-43.690667 30.72-31.317333 40.704-102.4 40.704-102.4s10.24-83.413333 10.24-166.869333v-78.250667c0-83.456-10.24-166.912-10.24-166.912z"
+                                    p-id="5579"></path>
                             </svg>
                         </i>
                     </a>
 
-                    <a class="tooltip" title="Telegram" href="https://t.me/zaihua_bot" rel="noopener external nofollow noreferrer" aria-label="Telegram" target="_blank">
+                    <a class="tooltip" title="Telegram" href="https://t.me/zaihua_bot"
+                        rel="noopener external nofollow noreferrer" aria-label="Telegram" target="_blank">
                         <i>
-                            <svg t="1634574435744" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7128" width="20" height="20">
-                                <path fill="currentColor" d="M1021.10368 160l-155.2 728c-11.2 51.2-41.6 64-84.8 40L545.90368 756.8 432.30368 865.6c-12.8 12.8-22.4 22.4-48 22.4l17.6-240 436.8-393.6c19.2-17.6-4.8-25.6-28.8-9.6L269.10368 584 37.10368 512c-51.2-16-51.2-51.2 11.2-75.2L955.50368 86.4c43.2-14.4 80 9.6 65.6 73.6z" p-id="7129"></path>
+                            <svg t="1634574435744" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" p-id="7128" width="20" height="20">
+                                <path fill="currentColor"
+                                    d="M1021.10368 160l-155.2 728c-11.2 51.2-41.6 64-84.8 40L545.90368 756.8 432.30368 865.6c-12.8 12.8-22.4 22.4-48 22.4l17.6-240 436.8-393.6c19.2-17.6-4.8-25.6-28.8-9.6L269.10368 584 37.10368 512c-51.2-16-51.2-51.2 11.2-75.2L955.50368 86.4c43.2-14.4 80 9.6 65.6 73.6z"
+                                    p-id="7129"></path>
                             </svg>
                         </i>
-                    </a> 
-                       
+                    </a>
+
 
                 </div>
             </section>
@@ -152,17 +148,18 @@
 
         <footer class="footer text-center">
             <a href="https://i.skk.moe" target="_blank" rel="noopener" class="label">© <span id="year-span"></span></a>
-            
 
-            
-            
+
+
+
         </footer>
     </div>
 
-    
+
     <script>
         // 使用公共JavaScript功能
         CommonUtils.initPage();
     </script>
 </body>
+
 </html>

@@ -12,11 +12,13 @@
     --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
     --profile-text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
     --tooltip-bg: rgba(48, 55, 66, 0.6);
-    --profile-overlay-gradient: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
+    --profile-overlay-gradient: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
 }
 
 /* 使用通用选择器定义全局盒模型，确保所有元素表现一致 */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -25,7 +27,8 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 
-body, html {
+body,
+html {
     height: 100%;
 }
 
@@ -77,7 +80,7 @@ h1 {
     display: flex;
 }
 
-.container > section {
+.container>section {
     padding: 55px 34px;
 }
 
@@ -232,6 +235,7 @@ h1 {
     body {
         padding: 30px;
     }
+
     .container {
         width: 100%;
         min-width: 290px;
@@ -242,19 +246,23 @@ h1 {
     .container {
         flex-direction: column;
     }
+
     .profile {
         position: relative;
         width: 100%;
         height: auto;
         padding: 40px 24px;
     }
+
     .profile h1 {
         font-size: 20px;
         margin-bottom: 5px;
     }
+
     .profile .avatar {
         width: 80px;
     }
+
     .portfolio {
         width: 100%;
         padding: 40px 24.7px;
@@ -265,7 +273,67 @@ h1 {
     body {
         padding: 10px;
     }
-    .profile, .portfolio {
+
+    .profile,
+    .portfolio {
         padding: 40px 24.7px;
+    }
+}
+
+/* 404 Page Styles */
+.error-page-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 0;
+}
+
+.error-container {
+    max-width: 400px;
+    padding: 60px 20px;
+}
+
+.error-code {
+    font-size: 8rem;
+    font-weight: 200;
+    color: #7c8891;
+    margin-bottom: 30px;
+    line-height: 1;
+    letter-spacing: -0.05em;
+}
+
+.home-button {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #7c8891;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(124, 136, 145, 0.2);
+}
+
+.home-button:hover {
+    background: #6a737a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(124, 136, 145, 0.3);
+}
+
+.home-button:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+    .error-code {
+        font-size: 6rem;
+    }
+
+    .home-button {
+        padding: 12px 24px;
+        font-size: 0.9rem;
     }
 }
