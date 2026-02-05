@@ -39,6 +39,9 @@ function initPage() {
 function initPageContent() {
     initPageAnimations();
     updateYear();
+    requestAnimationFrame(() => {
+        document.body.classList.add("is-loaded");
+    });
 }
 
 // 导出函数供其他脚本使用

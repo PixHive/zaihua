@@ -14,8 +14,18 @@
     <meta name="keywords" content="在花,ZAIHUA,在花频道,个人主页,博主">
     <meta name="author" content="在花">
     <link rel="canonical" href="https://www.zaihua.net/">
-    <link rel="preload" as="image" href="imgs/avatar.jpg">
+    <link rel="preload" as="image" href="imgs/avatar.avif" type="image/avif">
+    <link rel="preload" as="image" href="imgs/avatar.webp" type="image/webp">
+    <link rel="preload" as="image" href="imgs/avatar.jpg" type="image/jpeg">
+    <link rel="preload" as="image" href="imgs/wallpaper.avif" type="image/avif">
+    <link rel="preload" as="image" href="imgs/wallpaper.webp" type="image/webp">
+    <link rel="preload" as="image" href="imgs/wallpaper.png" type="image/png">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Noto+Sans+SC:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 
 
     <link rel="apple-touch-icon" sizes="180x180" href="imgs/favicon/apple-touch-icon.png">
@@ -85,17 +95,22 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <main class="wrapper" role="main">
         <div class="container">
-            <section class="profile">
+            <section class="profile" aria-label="个人信息">
                 <div class="meta">
-                    <img class="avatar" src="imgs/avatar.jpg" alt="在花的头像">
+                    <picture class="avatar">
+                        <source srcset="imgs/avatar.avif" type="image/avif">
+                        <source srcset="imgs/avatar.webp" type="image/webp">
+                        <img src="imgs/avatar.jpg" alt="在花的头像" width="240" height="240"
+                            decoding="async" fetchpriority="high">
+                    </picture>
                     <h1>在花</h1>
                     <div class="position">在花频道</div>
                 </div>
             </section>
 
-            <section class="portfolio">
+            <section class="portfolio" aria-label="简介与社交链接">
                 <div class="quote">
                     <p>心怀热忱，向阳而生</p>
                     <p>保持热爱，奔赴山海</p>
@@ -146,14 +161,14 @@
             </section>
         </div>
 
-        <footer class="footer text-center">
+        <footer class="footer text-center" role="contentinfo">
             <a href="https://i.skk.moe" target="_blank" rel="noopener" class="label">© <span id="year-span"></span></a>
 
 
 
 
         </footer>
-    </div>
+    </main>
 </body>
 
 </html>

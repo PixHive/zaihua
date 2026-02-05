@@ -13,6 +13,8 @@
     --profile-text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
     --tooltip-bg: rgba(48, 55, 66, 0.6);
     --profile-overlay-gradient: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+    --font-body: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    --font-display: "ZCOOL XiaoWei", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 }
 
 /* 使用通用选择器定义全局盒模型，确保所有元素表现一致 */
@@ -35,7 +37,7 @@ html {
 body {
     margin: 0;
     color: var(--text-color);
-    font: 16px/22px -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    font: 16px/22px var(--font-body);
     background: var(--bg-color);
     padding: 50px;
 }
@@ -43,6 +45,12 @@ body {
 a {
     background-color: transparent;
     text-decoration: none;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+    border-radius: 6px;
 }
 
 img {
@@ -55,6 +63,8 @@ h1 {
     margin: 10px 0;
     line-height: 30px;
     font-size: 24px;
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
 }
 
 /* 布局和容器 */
@@ -94,18 +104,37 @@ h1 {
     height: 100%;
 }
 
+@supports (background: image-set(url("../imgs/wallpaper.avif") type("image/avif"))) {
+    .profile {
+        background: var(--profile-overlay-gradient),
+            image-set(
+                url("../imgs/wallpaper.avif") type("image/avif"),
+                url("../imgs/wallpaper.webp") type("image/webp"),
+                url("../imgs/wallpaper.png") type("image/png")
+            ) no-repeat top;
+        background-size: cover;
+    }
+}
+
 .profile .meta {
     position: relative;
     z-index: 1;
 }
 
 .profile .avatar {
+    display: inline-block;
     width: 50%;
     aspect-ratio: 1 / 1;
-    object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
     overflow: hidden;
+}
+
+.profile .avatar img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 .profile .position {
@@ -124,6 +153,7 @@ h1 {
     font-style: italic;
     font-size: 18px;
     line-height: 32px;
+    font-family: var(--font-display);
 }
 
 .portfolio a {
@@ -184,6 +214,12 @@ h1 {
     color: var(--primary-color);
 }
 
+.social a:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+    border-radius: 50%;
+}
+
 /* 页脚 */
 .footer {
     transition: opacity 1s, transform 1s;
@@ -227,9 +263,39 @@ h1 {
     transform: translateY(40px);
 }
 
+.js .profile .meta,
+.js .portfolio .quote,
+.js .social {
+    opacity: 0;
+    transform: translateY(16px);
+}
+
+.is-loaded .profile .meta,
+.is-loaded .portfolio .quote,
+.is-loaded .social {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.is-loaded .profile .meta {
+    transition-delay: 0.1s;
+}
+
+.is-loaded .portfolio .quote {
+    transition-delay: 0.2s;
+}
+
+.is-loaded .social {
+    transition-delay: 0.3s;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .container,
-    .footer {
+    .footer,
+    .profile .meta,
+    .portfolio .quote,
+    .social {
         transition: none;
         transform: none;
     }
