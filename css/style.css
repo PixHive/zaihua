@@ -13,8 +13,6 @@
     --profile-text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
     --tooltip-bg: rgba(48, 55, 66, 0.6);
     --profile-overlay-gradient: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
-    --font-body: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
-    --font-display: "ZCOOL XiaoWei", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 }
 
 /* 使用通用选择器定义全局盒模型，确保所有元素表现一致 */
@@ -37,7 +35,7 @@ html {
 body {
     margin: 0;
     color: var(--text-color);
-    font: 16px/22px var(--font-body);
+    font: 16px/22px -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
     background: var(--bg-color);
     padding: 50px;
 }
@@ -63,8 +61,6 @@ h1 {
     margin: 10px 0;
     line-height: 30px;
     font-size: 24px;
-    font-family: var(--font-display);
-    letter-spacing: 0.02em;
 }
 
 /* 布局和容器 */
@@ -153,7 +149,6 @@ h1 {
     font-style: italic;
     font-size: 18px;
     line-height: 32px;
-    font-family: var(--font-display);
 }
 
 .portfolio a {
