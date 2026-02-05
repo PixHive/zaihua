@@ -78,7 +78,10 @@
     </script>
 
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/common.js"></script>
+    <script>
+        document.documentElement.classList.add("js");
+    </script>
+    <script src="js/common.js" defer></script>
 </head>
 
 <body>
@@ -90,7 +93,6 @@
                     <h1>在花</h1>
                     <div class="position">在花频道</div>
                 </div>
-                <div class="overlay"></div>
             </section>
 
             <section class="portfolio">
@@ -152,12 +154,6 @@
 
         </footer>
     </div>
-
-
-    <script>
-        // 使用公共JavaScript功能
-        CommonUtils.initPage();
-    </script>
 </body>
 
 </html>

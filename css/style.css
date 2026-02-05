@@ -67,9 +67,7 @@ h1 {
 }
 
 .container {
-    opacity: 0;
     transition: opacity 1s, transform 1s;
-    transform: translateY(-40px);
     position: relative;
     width: 80%;
     background: var(--container-bg-color);
@@ -90,7 +88,7 @@ h1 {
     text-align: center;
     width: 31.2%;
     color: #fff;
-    background: rgba(0, 0, 0, 0.6) url(../imgs/wallpaper.png) no-repeat top;
+    background: var(--profile-overlay-gradient), url(../imgs/wallpaper.png) no-repeat top;
     background-size: cover;
     text-shadow: var(--profile-text-shadow);
     height: 100%;
@@ -101,19 +99,10 @@ h1 {
     z-index: 1;
 }
 
-.profile .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--profile-overlay-gradient);
-}
-
 .profile .avatar {
     width: 50%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
     overflow: hidden;
@@ -198,10 +187,8 @@ h1 {
 /* 页脚 */
 .footer {
     transition: opacity 1s, transform 1s;
-    transform: translateY(40px);
     color: var(--footer-text-color);
     padding: 20px 0;
-    opacity: 0;
     font-size: 14px;
     text-align: center;
 }
@@ -228,6 +215,24 @@ h1 {
 .fadeIn {
     opacity: 1 !important;
     transform: translateY(0) !important;
+}
+
+.js .container {
+    opacity: 0;
+    transform: translateY(-40px);
+}
+
+.js .footer {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .container,
+    .footer {
+        transition: none;
+        transform: none;
+    }
 }
 
 /* 响应式设计 - 针对不同屏幕尺寸进行优化 */

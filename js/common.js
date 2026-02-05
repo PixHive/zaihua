@@ -47,3 +47,6 @@ window.CommonUtils = {
     initPageAnimations,
     updateYear
 };
+
+// 自动初始化
+initPage();
