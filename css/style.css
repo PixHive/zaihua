@@ -91,13 +91,15 @@ h1 {
 /* 个人资料区域 */
 .profile {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     width: 31.2%;
     color: #fff;
     background: var(--profile-overlay-gradient), url(../imgs/wallpaper.png) no-repeat top;
     background-size: cover;
     text-shadow: var(--profile-text-shadow);
-    height: 100%;
 }
 
 @supports (background: image-set(url("../imgs/wallpaper.avif") type("image/avif"))) {
@@ -148,11 +150,11 @@ h1 {
     margin: 20px auto;
     font-style: italic;
     font-size: 18px;
-    line-height: 32px;
+    line-height: 30px;
 }
 
 .portfolio .intro {
-    max-width: 360px;
+    max-width: 420px;
     margin: 0 auto;
     font-size: 14px;
     line-height: 24px;
